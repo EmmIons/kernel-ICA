@@ -66,13 +66,13 @@ if __name__ == '__main__':
         optimizer.zero_grad()
         cw.backward()
         optimizer.step()
-        # show the change of W
-        for name, parms in model.named_parameters():
-            print('-->name:', name)
-            print('-->para:', parms)
-            print('-->grad_requirs:', parms.requires_grad)
-            print('-->grad_value:', parms.grad)
-            print("===")
+#         # show the change of W
+#         for name, parms in model.named_parameters():
+#             print('-->name:', name)
+#             print('-->para:', parms)
+#             print('-->grad_requirs:', parms.requires_grad)
+#             print('-->grad_value:', parms.grad)
+#             print("===")
         print('Epoch [{}], C(W): {:.4f}'.format(epoch+1, cw.item()))
 
     # save estimated W
