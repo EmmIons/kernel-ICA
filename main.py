@@ -21,7 +21,7 @@ class Model(nn.Module):
 
 
 if __name__ == '__main__':
-    N = 100  # sample size
+    N = 500  # sample size
     m = 4  # number of sources
 
     # generate X ,size: N*m
