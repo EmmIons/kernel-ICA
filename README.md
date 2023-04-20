@@ -13,4 +13,4 @@ It will save the true W and estimated W in `./weights`
 
 ## Evaluate
 `python Amari_error.py`
-It will output the **Amari error** to evaluate the estimated W, which is mentioned in the paper above
+It will output the **Amari error** to compare the estimated W and the true W, as mentioned in the paper above
