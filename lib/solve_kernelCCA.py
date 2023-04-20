@@ -1,5 +1,5 @@
 import numpy as np
-from grammatrices import centered_gram_matrics
+from .grammatrices import centered_gram_matrics
 import torch
 
 

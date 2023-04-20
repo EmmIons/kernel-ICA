@@ -21,7 +21,7 @@ class Model(nn.Module):
 
 
 if __name__ == '__main__':
-    N = 500  # sample size
+    N = 100  # sample size
     m = 4  # number of sources
 
     # generate X ,size: N*m
@@ -60,23 +60,19 @@ if __name__ == '__main__':
         X_estimated = model(Y)
         Kk_hat = solve_kernelCCA.matrice_Kkhat(X_estimated, 0.03, 'Gaussian')
         lamda = solve_kernelCCA.eigenvalues(Kk_hat)
-        #print(lamda)
         lamda_hat = torch.min(lamda)
-        # print(lamda_hat)
-        # print(torch.max(lamda))
-        #cw = -0.5*torch.log10(lamda_hat)
+        cw = -0.5*torch.log10(lamda_hat)
         cw = lamda_hat
         optimizer.zero_grad()
         cw.backward()
         optimizer.step()
+        # show the change of W
         for name, parms in model.named_parameters():
             print('-->name:', name)
             print('-->para:', parms)
             print('-->grad_requirs:', parms.requires_grad)
             print('-->grad_value:', parms.grad)
             print("===")
-        # for i in model.named_parameters():
-        #     print(i)
         print('Epoch [{}], C(W): {:.4f}'.format(epoch+1, cw.item()))
 
     # save estimated W

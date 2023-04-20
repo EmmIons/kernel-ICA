@@ -5,8 +5,8 @@ if __name__ == '__main__':
     trueW = torch.load('./weights/trueW.pt').cuda()
     estimatedW = torch.load('./weights/estimatedW.pt')
     estimatedW = estimatedW.to(torch.float64).cuda()
-    print(estimatedW)
-    print(trueW)
+    print('estimated W:', estimatedW)
+    print('true W', trueW)
     # compute amari error
     trueW_inverse = torch.linalg.inv(trueW)
     m = trueW.size()[0]
