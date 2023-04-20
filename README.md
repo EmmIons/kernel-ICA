@@ -1,6 +1,6 @@
 # kernel-ICA
 A python implementation for Bach F R, Jordan M I. Kernel independent component analysis[J]. Journal of machine learning research, 2002, 3(Jul): 1-48.
-The kernel used here is **Gaussian kernel**, you can change to your kernel in `./lib/grammatrices.py.xxx_kernel_func()`.The model **Y=AX is realized by a Linear  network**, so the weights of the net is equal to W, which maps Y to X.
+The kernel used here is **Gaussian kernel**, you can change to other kernel in `./lib/grammatrices.py.xxx_kernel_func()`.The model **Y=AX is realized by a Linear  network**, so the weights of the net is equal to W, which maps Y to X.
 ## Requirements
 `python==3.10.10`
 `scipy==1.10.1`
