@@ -7,7 +7,7 @@ def func_rk(K_i, k):
     # rk(Ki)
     N = K_i.shape[0]
     I = torch.eye(N)
-    return (torch.inverse(K_i+N*k*I/2))*K_i
+    return (torch.inverse(K_i+N*k*I/2))@K_i
 
 
 def matrice_Kkhat(estimated_source, k, kernel_type):
