@@ -13,7 +13,7 @@ def centered_gram_matrics(x, kernel_type):
     N = x.shape[0]
     L = torch.zeros((N, N))
     for i in range(N):
-        for j in range(i):
+        for j in range(i+1):
             # sigma = 1
             L[i][j] = kernel_func(x[i], x[j], 1)
     for i in range(N):
